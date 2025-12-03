@@ -56,15 +56,15 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  siteName: 'Muhammad Fiaz',
-  domain: 'muhammadfiaz.com',
-  author: 'Muhammad Fiaz',
+  siteName: 'Faqre Alam',
+  domain: '',
+  author: 'Faqre Alam',
   description: 'Full Stack developer creating useful & delightful web experiences. Exploring ML & AI.',
   about:
     'I am a Full Stack developer who loves creating new things. I spend my spare time building free apps & tools, and I am currently diving into Machine Learning & AI to expand my problem‑solving toolkit. Always open to collaboration & new challenges.',
-    author_img: 'https://avatars.githubusercontent.com/u/75434191?v=4',
+    author_img: 'https://github.com/itsalam149.png',
     keywords: [
-    'Muhammad Fiaz',
+    'Faqre Alam',
     'Full Stack Developer',
     'Portfolio',
     'Next.js',
@@ -76,24 +76,21 @@ export const siteConfig: SiteConfig = {
     'AI'
   ],
   ogImage: '/og.png',
-  twitterHandle: '@muhammadfiaz_',
+  twitterHandle: '',
 
   theme: {
     default: 'dark',
     allowSystem: true,
   },
   links: {
-    website: 'https://muhammadfiaz.com',
-    github: 'https://github.com/muhammad-fiaz',
-    linkedin: 'https://www.linkedin.com/feed/',
-    tips: 'https://pay.muhammadfiaz.com',
-    email: 'mailto:contact@muhammadfiaz.com',
+    website: '',
+    github: 'https://github.com/itsalam149',
+    linkedin: '',
+    tips: '',
+    email: '',
   },
   social: [
-    { label: 'GitHub', url: 'https://github.com/muhammad-fiaz', icon: 'github' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/feed/', icon: 'linkedin' },
-    { label: 'Website', url: 'https://muhammadfiaz.com', icon: 'globe' },
-    { label: 'Tip', url: 'https://pay.muhammadfiaz.com', icon: 'coffee' },
+    { label: 'GitHub', url: 'https://github.com/itsalam149', icon: 'github' },
   ],
   navigation: [
     { label: 'Home', href: '/' },
@@ -106,10 +103,10 @@ export const siteConfig: SiteConfig = {
 
   
   seo: {
-    title: 'Muhammad Fiaz',
+    title: 'Faqre Alam',
     description: 'Full Stack developer creating useful & delightful web experiences. Exploring ML & AI.',
     keywords: [
-      'Muhammad Fiaz',
+      'Faqre Alam',
       'Full Stack Developer',
       'Portfolio',
       'Next.js',
@@ -120,9 +117,9 @@ export const siteConfig: SiteConfig = {
       'Machine Learning',
       'AI'
     ],
-    canonical: 'https://muhammadfiaz.com',
+    canonical: '',
     image: '/og.png',
-    imageAlt: "Muhammad Fiaz - Full Stack Developer",
+    imageAlt: "Faqre Alam - Full Stack Developer",
     locale: 'en-US',
     type: 'website',
     twitterCard: 'summary_large_image',
@@ -135,17 +132,22 @@ export const siteConfig: SiteConfig = {
 export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
   const { seo, siteName, domain } = siteConfig;
 
+  // Use a default domain if none is provided
+  const baseDomain = domain || 'localhost:3000';
+  const baseUrl = `https://${baseDomain}`;
+  const canonicalUrl = seo.canonical || baseUrl;
+
   const base: Metadata = {
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords,
-    authors: [{ name: siteConfig.author, url: siteConfig.links.website }],
-    metadataBase: new URL(`https://${domain}`),
-    alternates: { canonical: seo.canonical ?? `https://${domain}` },
+    authors: [{ name: siteConfig.author, url: siteConfig.links.website || baseUrl }],
+    metadataBase: new URL(baseUrl),
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: seo.title,
       description: seo.description,
-      url: seo.canonical ?? `https://${domain}`,
+      url: canonicalUrl,
       siteName,
       images: seo.image ? [seo.image] : [],
       type: seo.type ?? 'website',
@@ -156,8 +158,8 @@ export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
       title: seo.title,
       description: seo.description,
       images: seo.image ? [seo.image] : [],
-      site: siteConfig.twitterHandle,
-      creator: siteConfig.twitterHandle,
+      site: siteConfig.twitterHandle || undefined,
+      creator: siteConfig.twitterHandle || undefined,
     },
     other: {
       robots: seo.robots,

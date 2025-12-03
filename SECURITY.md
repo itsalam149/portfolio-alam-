@@ -2,31 +2,17 @@
 
 ## Supported Versions
 
-Use this section to know about the versions of my project that are currently supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 2.x.x+  | :white_check_mark: |
-| < 2.0   | :x:                |
+This project is actively maintained. Security updates will be provided for the current version.
 
 ## Reporting a Vulnerability
 
-To report a vulnerability in the repository, please follow these steps:
+To report a security vulnerability:
 
-1. Go to the [Issues](https://github.com/portfolio/repository/issues) section of the repository.
+1. Please use the contact form on the website or open a private security issue
+2. Provide a clear description of the vulnerability
+3. Include steps to reproduce (if applicable)
+4. Include any additional context that can help understand and address the vulnerability
 
-2. Click on the "[New Issue](https://github.com/muhammad-fiaz/portfolio/issues/new)" button.
+Once a vulnerability report is submitted, it will be reviewed as soon as possible. We strive to provide timely updates on the progress and resolution of reported vulnerabilities.
 
-3. Select the "Vulnerability Report" issue template.
-
-4. Provide a descriptive title and fill in the template with all the necessary details, including:
-
-   - A clear description of the vulnerability.
-   - Steps to reproduce the vulnerability (if applicable).
-   - Any additional information or context that can help understand and address the vulnerability.
-
-5. Submit the issue.
-
-Once a vulnerability report is submitted, we will review it as soon as possible. We strive to provide timely updates on the progress and resolution of reported vulnerabilities.
-
-Please note that the acceptance or declination of a vulnerability report will be communicated through the issue thread. We appreciate your contribution to the security of our project and will work collaboratively to address any identified vulnerabilities.
+Thank you for helping keep this project secure!
